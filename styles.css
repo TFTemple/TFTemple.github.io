@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Droid Sans Mono', monospace;
 }
 
 /*
@@ -91,7 +91,7 @@ such as chrome and firefox (note: can't very reliable documentation on this).
 }
 
 /*Extra styling for the links, which allow for them to hover and
-slightly shrink when hovered over.*/
+slightly squish together when hovered over.*/
 .navbarLink:hover {
     display: flex;
     justify-content: center;

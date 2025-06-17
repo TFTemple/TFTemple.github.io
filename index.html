@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/70dda1f555.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!--
@@ -16,15 +17,13 @@
     Editorial note: further comments will appear in large blocks that 
     relate to the code immediately below them. I don't like to clutter
     my lines with a bunch of comments, but if needed I'll resort to this.
+
+    ALSO: color code #8f6bfb is the main theme for this website. It looks
+    sooo good with a linear gradient (see styles.css for how it's used). 
     -->
     <nav class="navbar">
         <div class="navbarContainer">
-            <a href="/" id="navbarLogo">About Me</a>
-            <div class="navbarToggle" id="mobileMenu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <a href="/" id="navbarLogo"><i class="fa-solid fa-user" style="color: #8f6bfb;"></i>About Me</a>
             <ul class="navbarMenu">
                 <li class="navbarItem">
                     <a href="/" class="navbarLink">Home</a>
@@ -41,5 +40,9 @@
             </ul>
         </div>
     </nav>
+
+    <p>
+        <i class="fa-solid fa-user"></i>
+    </p>
 </body>
 </html>

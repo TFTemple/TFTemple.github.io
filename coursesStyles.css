@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Droid Sans Mono', monospace;
+}
+
+/*
+This is the topmost banner that spans the width of the page.
+It will contain the 'About Me' logo and the navigation bar
+with each of its links.
+*/
+.navbar {
+    background: #000000;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/*Contains both the logo and the navigation bar.
+'space-around' allows for each of these items to be
+equally spaced out, which looks better than start so far.
+*/
+.navbarContainer {
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+/*
+ID selector for the Logo that's seen at the top left of the page.
+Note that the 'webkit' and 'moz' target the browsers that use them, 
+such as chrome and firefox (note: can't very reliable documentation on this).
+*/
+#navbarLogo {
+    background-color: #8f6bfb;
+    background-image: linear-gradient(to top, #8f6bfb 0%, #4568dc 100%);
+    background-size: 100%;
+    -webkit-background-clip: text; /*Clips element's background so that it's only the text that's visible.*/
+    -moz-background-clip: text; /*Same as the webkit line above, but for mozilla based browsers.*/
+    -webkit-text-fill-color: transparent; /*Makr text color transparent so that the background color shows through.*/
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer; /*Cool feature; changes the cursor to a pointer when hovering over the logo.*/
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.favicon {
+    margin-right: 0.5rem;
+}
+
+.navbarMenu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbarItem {
+    height: 80px;
+}
+
+.navbarLink {
+    /*Reused this section from the logo above; 
+    want to keep this 'hazy purple' theme going.*/
+    background-color: #8f6bfb;
+    background-image: linear-gradient(to top, #8f6bfb 0%, #4568dc 100%);
+    background-size: 100%;
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+/*Extra styling for the links, which allow for them to hover and
+slightly squish together when hovered over.*/
+.navbarLink:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 12px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #4568dc;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/*Main Gridbox container for the header block, image reele, and
+'about me' section. Uses gridbox for parent structuring.*/
+.mainContainer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 120vh;
+    gap: 20px;
+    background-color: #141414;
+    padding: 20px;
+}
+
+/*Flexbox container for each of the six Douglas College
+courses that were the most memorable to me.*/
+.courseCard {
+    background: linear-gradient(135deg, #1a1a1a 0%, #353535 100%);
+    border: 2px solid #8f6bfb;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 400px;
+    box-shadow: 0 8px 32px rgba(143, 107, 251, 0.1);
+    border: 1px solid red;
+}
+
+/*Hover effect for the course cards, similar to what was used for each
+of the nav links at the top of the 'Home' page.*/
+.courseCard:hover {
+    transform: translateY(-3px);
+    transition: all 0.3s ease; /*Enables smooth transition for the hover effect.*/
+    box-shadow: 0 12px 40px rgba(143, 107, 251, 0.2);
+    border-color: #4568dc;
+}
+
+/*Extra div that houses both the card title and subtitle.*/
+.courseHeader {
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid rgb(0, 250, 0);
+}
+
+.courseHeader h2 {
+    color: #8f6bfb;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.courseHeader h3 {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+.courseImage {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    min-height: 120px;
+}
+
+.courseImage img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.courseDescription {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.courseDescription p {
+    color: #cccccc;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}

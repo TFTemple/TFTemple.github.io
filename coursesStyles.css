@@ -73,8 +73,6 @@ such as chrome and firefox (note: can't very reliable documentation on this).
 }
 
 .navbarLink {
-    /*Reused this section from the logo above; 
-    want to keep this 'hazy purple' theme going.*/
     background-color: #8f6bfb;
     background-image: linear-gradient(to top, #8f6bfb 0%, #4568dc 100%);
     background-size: 100%;
@@ -119,10 +117,16 @@ slightly squish together when hovered over.*/
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 120vh;
-    gap: 20px;
+    height: 250vh;
+    gap: 12px;
     background-color: #141414;
     padding: 20px;
+}
+
+/*Removes the underline from the links in course cards.*/
+.mainContainer a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /*Flexbox container for each of the six Douglas College
@@ -138,7 +142,6 @@ courses that were the most memorable to me.*/
     height: 100%;
     min-height: 400px;
     box-shadow: 0 8px 32px rgba(143, 107, 251, 0.1);
-    border: 1px solid red;
 }
 
 /*Hover effect for the course cards, similar to what was used for each
@@ -154,23 +157,25 @@ of the nav links at the top of the 'Home' page.*/
 .courseHeader {
     text-align: center;
     margin-bottom: 10px;
-    border: 1px solid rgb(0, 250, 0);
 }
 
+/*Title and subtitle styling.*/
 .courseHeader h2 {
     color: #8f6bfb;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 5px;
     font-weight: bold;
 }
-
 .courseHeader h3 {
     color: #ffffff;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     font-weight: normal;
     opacity: 0.8;
 }
 
+/*Flexbox image container and styling. 
+Image adapts to the size of the card, which includes space
+taken up by the two titles and description (a bit long for some).*/
 .courseImage {
     flex: 1;
     display: flex;
@@ -179,23 +184,23 @@ of the nav links at the top of the 'Home' page.*/
     margin: 15px 0;
     min-height: 120px;
 }
-
 .courseImage img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 75%;
+    max-height: 75%;
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/*Small amount of styling for the card description.*/
 .courseDescription {
     text-align: center;
     margin-top: 15px;
 }
-
 .courseDescription p {
+    transform: translateY(-35px);
     color: #cccccc;
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     margin: 0;
 }

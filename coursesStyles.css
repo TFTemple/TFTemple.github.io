@@ -119,10 +119,16 @@ slightly squish together when hovered over.*/
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 120vh;
+    height: 145vh;
     gap: 20px;
     background-color: #141414;
     padding: 20px;
+}
+
+/*Removes the underline from the links in course cards.*/
+.mainContainer a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /*Flexbox container for each of the six Douglas College
@@ -157,13 +163,13 @@ of the nav links at the top of the 'Home' page.*/
     border: 1px solid rgb(0, 250, 0);
 }
 
+/*Title and subtitle styling.*/
 .courseHeader h2 {
     color: #8f6bfb;
     font-size: 1.5rem;
     margin-bottom: 5px;
     font-weight: bold;
 }
-
 .courseHeader h3 {
     color: #ffffff;
     font-size: 0.9rem;
@@ -171,6 +177,9 @@ of the nav links at the top of the 'Home' page.*/
     opacity: 0.8;
 }
 
+/*Flexbox image container and styling. 
+Image adapts to the size of the card, which includes space
+taken up by the two titles and description (a bit long for some).*/
 .courseImage {
     flex: 1;
     display: flex;
@@ -179,7 +188,6 @@ of the nav links at the top of the 'Home' page.*/
     margin: 15px 0;
     min-height: 120px;
 }
-
 .courseImage img {
     max-width: 100%;
     max-height: 100%;
@@ -188,14 +196,14 @@ of the nav links at the top of the 'Home' page.*/
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/*Small amount of styling for the card description.*/
 .courseDescription {
     text-align: center;
     margin-top: 15px;
 }
-
 .courseDescription p {
     color: #cccccc;
-    font-size: 0.85rem;
+    font-size: 0.90rem;
     line-height: 1.4;
     margin: 0;
 }

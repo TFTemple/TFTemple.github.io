@@ -118,7 +118,7 @@ slightly squish together when hovered over.*/
     align-items: center;
     justify-content: center;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 95vh;
+    height: 120vh;
     background-color: #141414;
 }
 

@@ -111,3 +111,139 @@ slightly squish together when hovered over.*/
     transition: all 0.3s ease;
 }
 
+/*Main container for the header block, image reele, and
+'about me' section. Uses gridbox for parent structuring.*/
+.mainContainer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 95vh;
+    background-color: #141414;
+}
+
+/*Container for the two 'welcome' headers.*/
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 2000px;
+    padding: 0 50px;
+}
+
+/*Styling for the two headers seen before the image reel
+and main 'about me' section.*/
+.headerContent h1 {
+    font-size: 4rem;
+    background-color: #8f6bfb;
+    background-image: linear-gradient(to top, #8f6bfb 0%, #4568dc 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+/*Leverages a bottom starting gradiant to work with the
+h1 header that uses a 'to top' gradiant.*/
+.headerContent h2 {
+    font-size: 2rem;
+    background-color: #8f6bfb;
+    background-image: linear-gradient(to bottom, #8f6bfb 0%, #4568dc 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+/*Gridbox container for the 'about me' description.*/
+.descriptionContainer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 2000px;
+    padding: 0px 5px;
+}
+
+/*Flexbox container for the 'about me' description.*/
+.descriptionContainer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    gap: 15px;
+    background-color: #141414;
+}
+
+/*Styling for each of the 5 paragraphs in the 'about me' description.
+I couldn't figure out a more efficient way to add styling to all of them at once.*/
+.aboutMeList li {
+    font-size: 1.2rem;
+    color: #76737e;
+}
+
+/*Flexbox container for the image reel.*/
+.imageReelContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 2000px;
+    max-height: 95vh;
+    margin: 20px auto;
+    position: relative;    
+    background-color: #141414;
+}
+
+/*Primary container for the image reel. 
+I wanted portrait images, which didn't require
+any additional structuring to implement.*/
+.imageReel {
+    position: relative;
+    width: 100%;
+    max-height: 775px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*For Rounded corners.*/
+}
+
+/*Individual slide sizing.*/
+.imageSlide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+/*Image sizing.*/
+.imageSlide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Really simple fade animation*/
+.fade {
+    animation-name: fade;
+    animation-duration: 3s;
+}
+
+/*Internal components of the fade animation.
+30% opacity with a 3 second animation duration gives a nice effect
+that's similar to an exaggerated slow blink*/
+@keyframes fade {
+    from {opacity: .3} 
+    to {opacity: 1}
+}

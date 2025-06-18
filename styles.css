@@ -111,13 +111,19 @@ slightly squish together when hovered over.*/
     transition: all 0.3s ease;
 }
 
-.main {
-    background-color: #141414;
-}
-
+/*Main container for the header block, image reele, and
+'about me' section. Uses gridbox for parent structuring.*/
 .mainContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 95vh;
+    background-color: #141414;
+    border: 1px solid red; /*For debugging purposes.*/
+}
+
+/*Container for the two 'welcome' headers.*/
+.headerContainer {
+    display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
@@ -125,13 +131,14 @@ slightly squish together when hovered over.*/
     background-color: #141414;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
+    max-width: 2000px;
     padding: 0 50px;
+    border: 1px solid rgb(0, 255, 98); /*For debugging purposes.*/
 }
 
 /*Styling for the two headers seen before the image reel
 and main 'about me' section.*/
-.mainContent h1 {
+.headerContent h1 {
     font-size: 4rem;
     background-color: #8f6bfb;
     background-image: linear-gradient(to top, #8f6bfb 0%, #4568dc 100%);
@@ -140,18 +147,11 @@ and main 'about me' section.*/
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    /*
-    Possibly add these in, but unsure about grid/flexbox placement.
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    */
 }
 
 /*Leverages a bottom starting gradiant to work with the
 h1 header that uses a 'to top' gradiant.*/
-.mainContent h2 {
+.headerContent h2 {
     font-size: 2rem;
     background-color: #8f6bfb;
     background-image: linear-gradient(to bottom, #8f6bfb 0%, #4568dc 100%);
@@ -161,3 +161,53 @@ h1 header that uses a 'to top' gradiant.*/
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
+
+/*Container for the 'about me' description.*/
+.descriptionContainer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 2000px;
+    border: 1px solid rgb(0, 255, 98); /*For debugging purposes.*/
+}
+
+.descriptionContainer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90vh;
+    gap: 20px;
+    background-color: #141414;
+    border: 1px solid rgb(0, 255, 98);
+}
+
+/*Styling for each of the 5 paragraphs in the 'about me' description.
+I couldn't figure out a more efficient way to add styling to all of them at once.*/
+.aboutMeList li {
+    font-size: 1.2rem;
+    color: #76737e;
+    border: 1px solid rgb(0, 255, 98);
+}
+
+/*Styling for the 'about me' description.
+.descriptionContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 2000px;
+    padding: 0 50px;
+}
+*/

@@ -119,7 +119,7 @@ slightly squish together when hovered over.*/
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 145vh;
+    height: 230vh;
     gap: 20px;
     background-color: #141414;
     padding: 20px;

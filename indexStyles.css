@@ -74,7 +74,7 @@ such as chrome and firefox (note: can't very reliable documentation on this).
 
 .navbarLink {
     /*Reused this section from the logo above; 
-    want to keep this 'hazy purple' theme going.*/
+    want to keep this 'hazy purple' theme.*/
     background-color: #8f6bfb;
     background-image: linear-gradient(to top, #8f6bfb 0%, #4568dc 100%);
     background-size: 100%;

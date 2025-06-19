@@ -117,7 +117,7 @@ slightly squish together when hovered over.*/
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    height: 155vh;
+    height: 185vh;
     gap: 12px;
     background-color: #141414;
     padding: 20px;
@@ -142,15 +142,40 @@ interests that were the most memorable to me.*/
     height: 100%;
     min-height: 500px;
     box-shadow: 0 8px 32px rgba(143, 107, 251, 0.1);
+    
+    /*Simple fade-in effect.*/
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-play-state: paused;
 }
 
-/*Hover effect for the interest cards, similar to what was used for each
-of the nav links at the top of the 'Home' page.*/
+/*Toggle the animation to run when card is visible.*/
+.interestCard.visible {
+    animation-play-state: running;
+}
+
+/*Simple fade-in animation for each card. Starts opacity
+at 0, and brings it back up to 1 over 0.8 seconds. I also added
+a sort of 'rising' effect by simultaneously translating each card
+from 20px below the screen back to it's original 0px below the screen.*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Hover effect for the interest cards: creates themeatically similar 
+illumination effect when the mouse hovers over the card. Also turns
+mouse to pointer*/
 .interestCard:hover {
-    transform: translateY(-3px);
-    transition: all 0.3s ease; /*Enables smooth transition for the hover effect.*/
-    box-shadow: 0 12px 40px rgba(143, 107, 251, 0.2);
+    box-shadow: 0 20px 40px rgba(235, 228, 255, 0.2);
     border-color: #4568dc;
+    cursor: pointer;
 }
 
 /*Extra div that houses both the card title and subtitle.*/

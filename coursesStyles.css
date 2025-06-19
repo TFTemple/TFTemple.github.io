@@ -161,7 +161,13 @@ of the nav links at the top of the 'Home' page.*/
 
 /*Title and subtitle styling.*/
 .courseHeader h2 {
-    color: #8f6bfb;
+    background-color: #8f6bfb;
+    background-image: linear-gradient(to top, #8f6bfb 0%, #4568dc 100%);
+    background-size: 100%;
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
     font-size: 2rem;
     margin-bottom: 5px;
     font-weight: bold;

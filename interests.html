@@ -1,0 +1,133 @@
+<!--I like the card-based layout of the interests page, so I decided to use it here too.
+Therefore, I'm just reusing the same interestsStyles.css file instead of -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="interestsStyles.css">
+    <link rel="icon" type="image/png" href="faviconImage.png">
+    <script src="https://kit.fontawesome.com/70dda1f555.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Navigation bar (reused from index.html).-->
+    <nav class="navbar">
+        <div class="navbarContainer">
+            <a href="/" id="navbarLogo"><i class="fa-solid fa-user fa-lg" style="color: #8f6bfb; padding: 10px;"></i>About Me</a>
+            <ul class="navbarMenu">
+                <li class="navbarItem">
+                    <a href="/" class="navbarLink"><i class="fa-solid fa-house" style="color: #8f6bfb; padding: 10px"></i>Home</a>
+                </li>
+                <li class="navbarItem">
+                    <a href="courses.html" class="navbarLink"><i class="fa-solid fa-chalkboard-user" style="color: #8f6bfb; padding: 10px"></i>Courses</a>
+                </li>
+                <li class="navbarItem">
+                    <a href="interests.html" class="navbarLink"><i class="fa-brands fa-hackerrank" style="color: #8f6bfb; padding: 10px"></i>Interests</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Respective cards for each interest I wanted to include. 
+    Each of these cards has its own itle, a brief description, a small image.
+    Additionally, the cards link back to their respective interest pages on the Douglas College website.-->
+     <div class="mainContainer">
+        <a href="https://www.douglascollege.ca/interest/cmpt-1105" target="_blank">
+            <div class="interestCard">
+                <div class="interestHeader">
+                    <h2>Cybersecurity</h2>
+                    <h3></h3>
+                </div>
+                <div class="interestImage">
+                    <img src="interestImages/image1.jpg" alt="Programming interest">
+                </div>
+                <div class="interestDescription">
+                    <p>This interest was my first ever programming interest that (thankfully) was based around Python.
+                        I was able to get a hold of the basics of this new syntax, and conceptualize the logic behind the code.
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.douglascollege.ca/interest/cmpt-1109" target="_blank">
+            <div class="interestCard">
+                <div class="interestHeader">
+                    <h2>CMPT 1109</h2>
+                    <h3>Computer Programming 1</h3>
+                </div>
+                <div class="interestImage">
+                    <img src="interestImages/image2.jpg" alt="Computer Programming interest">
+                </div>
+                <div class="interestDescription">
+                    <p>The next programming interest that I took, which focused heavily on C++. Switching to this strongly typed language
+                        was challenging at first, but I eventually found that this uniquely strict language felt surprisingly intuitive after enough experience.
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.douglascollege.ca/interest/cmpt-1209" target="_blank">
+            <div class="interestCard">
+                <div class="interestHeader">
+                    <h2>CMPT 1209</h2>
+                    <h3>Computer Programming 2</h3>
+                </div>
+                <div class="interestImage">
+                    <img src="interestImages/image3.jpg" alt="Computing Science interest">
+                </div>
+                <div class="interestDescription">
+                    <p>1209 was the second half to 1109 in many ways, one of which emphasized the importance of taking an object-oriented approach
+                        to any programming task. I find that I do best with structure and routine, so reshaping my 'spaghetti code' mindset was crucial to succeeding in that class.
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.douglascollege.ca/interest/cmpt-1105" target="_blank">
+            <div class="interestCard">
+                <div class="interestHeader">
+                    <h2>CMPT 1105</h2>
+                    <h3>Introduction to Computer Science & Programming</h3>
+                </div>
+                <div class="interestImage">
+                    <img src="interestImages/image4.jpg" alt="Programming interest">
+                </div>
+                <div class="interestDescription">
+                    <p>This interest was my first ever programming interest that (thankfully) was based around Python.
+                        I was able to get a hold of the basics of this new syntax, and conceptualize the logic behind the code.
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.douglascollege.ca/interest/cmpt-1109" target="_blank">
+            <div class="interestCard">
+                <div class="interestHeader">
+                    <h2>CMPT 1109</h2>
+                    <h3>Computer Programming 1</h3>
+                </div>
+                <div class="interestImage">
+                    <img src="interestImages/image5.jpg" alt="Computer Programming interest">
+                </div>
+                <div class="interestDescription">
+                    <p>The next programming interest that I took, which focused heavily on C++. Switching to this strongly typed language
+                        was challenging at first, but I eventually found that this uniquely strict language felt surprisingly intuitive after enough experience.
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.douglascollege.ca/interest/cmpt-1209" target="_blank">
+            <div class="interestCard">
+                <div class="interestHeader">
+                    <h2>CMPT 1209</h2>
+                    <h3>Computer Programming 2</h3>
+                </div>
+                <div class="interestImage">
+                    <img src="interestImages/image6.jpg" alt="Computing Science interest">
+                </div>
+                <div class="interestDescription">
+                    <p>1209 was the second half to 1109 in many ways, one of which emphasized the importance of taking an object-oriented approach
+                        to any programming task. I find that I do best with structure and routine, so reshaping my 'spaghetti code' mindset was crucial to succeeding in that class.
+                    </p>
+                </div>
+            </div>
+        </a>
+     </div>
+</body>
+</html>

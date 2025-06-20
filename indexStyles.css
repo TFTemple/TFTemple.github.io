@@ -117,7 +117,7 @@ slightly squish together when hovered over.*/
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.9fr 1.4fr 1.2fr; 
     height: 120vh;
     background-color: #141414;
 }
@@ -128,6 +128,7 @@ slightly squish together when hovered over.*/
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    margin-left: -20px;
     height: 90vh;
     background-color: #141414;
     z-index: 1;
@@ -168,6 +169,7 @@ h1 header that uses a 'to top' gradiant.*/
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    margin-left: -50px;
     height: 90vh;
     background-color: #141414;
     z-index: 1;
@@ -202,8 +204,9 @@ I couldn't figure out a more efficient way to add styling to all of them at once
     justify-content: center;
     width: 100%;
     max-width: 2000px;
-    max-height: 95vh;
+    max-height: 90vh;
     margin: 20px auto;
+    margin-left: -28px;
     position: relative;    
     background-color: #141414;
 }

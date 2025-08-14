@@ -1,0 +1,78 @@
+# name: Display name for this workflow
+name: Intermediate CI/CD
+
+# on: Configure events that start this workflow
+on:
+  # Run on pushes to main and on version tags like v1.2.3
+  push:
+    branches: ["main"]
+    tags: ["v*"]
+  # Validate pull requests targeting main
+  pull_request:
+    branches: ["main"]
+
+# permissions: Define the minimal token permissions this workflow needs
+permissions:
+  contents: write # needed to create releases on tag push
+
+# jobs: Define multiple jobs with a build matrix and artifact passing
+jobs:
+  build-test:
+    name: Build & Test • ${{ matrix.os }} • Node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }} # run on each OS from the matrix
+    strategy:
+      fail-fast: false        # don't cancel all if one matrix job fails
+      matrix:
+        os: [ubuntu-latest, windows-latest] # test on Linux and Windows
+        node: [18, 20]                      # test on Node 18 and 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 # fetch repository code
+
+      - name: Setup Node
+        uses: actions/setup-node@v4 # install the matrix-specified Node version
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Install deps
+        run: npm ci # clean install based on package-lock.json
+
+      - name: Test
+        run: npm test -- --ci # run unit tests in CI mode
+
+      - name: Build
+        run: npm run build --if-present # build artifacts if build script exists
+
+      - name: Upload artifact
+        if: success() # only upload if previous steps succeeded
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-build-${{ matrix.os }}-node${{ matrix.node }} # unique name per matrix
+          path: |
+            dist
+            build
+            out
+          if-no-files-found: ignore # don't fail if directories are missing
+
+  release:
+    name: Release (on tag)
+    if: startsWith(github.ref, 'refs/tags/') # only run for tag refs
+    needs: [build-test] # wait until build-test matrix finishes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4 # get artifacts from matrix jobs
+        with:
+          path: ./artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2 # create a release for the tag
+        with:
+          files: ./artifacts/** # upload all artifacts into the release
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # provided by GitHub

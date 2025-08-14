@@ -1,0 +1,43 @@
+# name: Human-friendly workflow name shown in the GitHub Actions UI
+name: Basic CI
+
+# on: Event(s) that will trigger this workflow
+on:
+  # push: Run this workflow on any push to any branch
+  push:
+    branches: ["*"] # "*" means all branches
+  # pull_request: Also run on pull requests targeting any branch
+  pull_request:
+
+# jobs: A workflow is made up of one or more jobs
+jobs:
+  build:
+    # name: Optional, displays in the UI for this job
+    name: Build and Test (Node)
+    # runs-on: Type of machine GitHub will provision for this job
+    runs-on: ubuntu-latest
+
+    # steps: A sequence of tasks executed by the job
+    steps:
+      # uses: actions/checkout fetches the repository code onto the runner
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Setup Node.js runtime for consistent builds/tests
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Install Node.js v20
+          cache: 'npm'       # Enable npm cache to speed up installs
+
+      # Install dependencies using clean CI install (respects lockfile)
+      - name: Install dependencies
+        run: npm ci
+
+      # Run your test suite (expects an npm test script to exist)
+      - name: Run tests
+        run: npm test -- --ci
+
+      # Optionally build the project (if a build script exists)
+      - name: Build
+        run: npm run build --if-present
